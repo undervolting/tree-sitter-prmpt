@@ -1,0 +1,122 @@
+====================================
+profile and sections
+====================================
+
+@profile mode
+@description Mode profile text.
+@section Persona
+You are planner
+@end
+@section Instructions
+- do this
+1. then this
+@end
+
+------------------------------------
+
+(source_file
+  (profile_directive
+    (directive_keyword)
+    (identifier)
+    (line_end))
+  (description_directive
+    (directive_keyword)
+    (inline_text
+      (text_segment))
+    (line_end))
+  (section
+    (section_header
+      (directive_keyword)
+      (section_name)
+      (line_end))
+    (text_line
+      (text_segment)
+      (line_end))
+    (directive_keyword)
+    (line_end))
+  (section
+    (section_header
+      (directive_keyword)
+      (section_name)
+      (line_end))
+    (list_item
+      (bullet_marker)
+      (inline_text
+        (text_segment))
+      (line_end))
+    (list_item
+      (numbered_marker)
+      (inline_text
+        (text_segment))
+      (line_end))
+    (directive_keyword)
+    (line_end)))
+
+====================================
+placeholders declarations conditionals
+====================================
+
+@section Declarations
+enabled: bool
+score: number
+user_name: string
+@end
+@section Prompt
+@if enabled and score > 0
+Hello {{user_name}}
+@else
+fallback
+@endif
+@end
+
+------------------------------------
+
+(source_file
+  (section
+    (section_header
+      (directive_keyword)
+      (section_name)
+      (line_end))
+    (declaration_line
+      (identifier)
+      (type_name)
+      (line_end))
+    (declaration_line
+      (identifier)
+      (type_name)
+      (line_end))
+    (declaration_line
+      (identifier)
+      (type_name)
+      (line_end))
+    (directive_keyword)
+    (line_end))
+  (section
+    (section_header
+      (directive_keyword)
+      (section_name)
+      (line_end))
+    (conditional_directive
+      (directive_keyword)
+      (logical_expression
+        (identifier)
+        (comparison_expression
+          (identifier)
+          (number)))
+      (line_end))
+    (placeholder_line
+      (text_segment)
+      (placeholder
+        (identifier))
+      (line_end))
+    (conditional_directive
+      (directive_keyword)
+      (line_end))
+    (text_line
+      (text_segment)
+      (line_end))
+    (conditional_directive
+      (directive_keyword)
+      (line_end))
+    (directive_keyword)
+    (line_end)))

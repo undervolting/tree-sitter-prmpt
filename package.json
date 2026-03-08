@@ -1,0 +1,15 @@
+{
+  "name": "tree-sitter-prmpt",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for PRMPT",
+  "main": "grammar.js",
+  "scripts": {
+    "test": "tree-sitter test"
+  },
+  "keywords": [
+    "tree-sitter",
+    "grammar",
+    "prmpt"
+  ],
+  "license": "MIT"
+}
